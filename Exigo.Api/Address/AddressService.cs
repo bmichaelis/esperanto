@@ -53,21 +53,21 @@ namespace Exigo.Api
                 var response = GetContext().VerifyAddress(new VerifyAddressRequest
                 {
                     Address = Address.FullAddress,
-                    City = Address.City,
-                    State = Address.State,
-                    Zip = Address.Zip,
+                    City    = Address.City,
+                    State   = Address.State,
+                    Zip     = Address.Zip,
                     Country = Address.Country
                 });
 
                 if (response.Result.Status == ResultStatus.Success)
                 {
                     Address.IsVerified = true;
-                    result.Address1 = response.Address;
-                    result.Address2 = string.Empty;
-                    result.City = response.City;
-                    result.State = response.State;
-                    result.Zip = response.Zip;
-                    result.Country = response.Country;
+                    result.Address1    = response.Address;
+                    result.Address2    = string.Empty;
+                    result.City        = response.City;
+                    result.State       = response.State;
+                    result.Zip         = response.Zip;
+                    result.Country     = response.Country;
                 }
                 
                 return result;
